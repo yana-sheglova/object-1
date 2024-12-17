@@ -10,7 +10,7 @@ export default function orderByProps(obj, order) {
   const remainingProps = [];
 
   for (const key in obj) {
-    if (obj.hasOwnProperty(key) && !order.includes(key)) {
+    if (Object.prototype.hasOwnProperty.call(obj, key) && !order.includes(key)) {
       remainingProps.push({ key, value: obj[key] });
     }
   }
